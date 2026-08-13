@@ -27,7 +27,8 @@ def create_tables():
             worker_status TEXT,
             skill_tags TEXT,
             verified TEXT,
-            projects_completed INTEGER
+            projects_completed INTEGER,
+            source_records TEXT
         )
     """)
 
