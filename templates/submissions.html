@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Audio Submissions</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Audio Submissions</h1>
+
+<a href="/">
+    ← Upload another audio
+</a>
+
+<br><br>
+
+<table>
+
+    <tr>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Audio</th>
+        <th>Duration</th>
+        <th>Sample Rate</th>
+        <th>Bitrate</th>
+        <th>Loudness</th>
+    </tr>
+
+    {% for submission in submissions %}
+
+    <tr>
+
+        <td>{{ submission["name"] }}</td>
+
+        <td>{{ submission["phone"] }}</td>
+
+        <td>
+            <audio controls>
+                <source
+                    src="{{ url_for('audio', filename=submission['audio_path']) }}"
+                    type="audio/wav"
+                >
+                Ypor browser doesn't support audio playback.
+            </audio>
+        </td>
+
+        <td>
+            {{ submission["duration_seconds"] }} sec
+        </td>
+
+        <td>
+            {{ submission["sample_rate_khz"] }} kHz
+        </td>
+
+        <td>
+            {{ submission["bitrate_kbps"] }} kbps
+        </td>
+
+        <td>
+            {{ submission["loudness_db"] }} dB
+        </td>
+
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+</body>
+</html>

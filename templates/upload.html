@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Audio Collection</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 700px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0 18px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 12px 25px;
+            cursor: pointer;
+        }
+
+        .link {
+            display: block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Audio Collection App</h1>
+
+<form action="/submit-audio" method="POST" enctype="multipart/form-data">
+
+    <label>Name</label>
+    <input
+        type="text"
+        name="name"
+        placeholder="Enter your name"
+        required
+    >
+
+    <label>Phone</label>
+    <input
+        type="text"
+        name="phone"
+        placeholder="Enter your phone number"
+        required
+    >
+
+    <label>Upload WAV Audio</label>
+    <input
+        type="file"
+        name="audio"
+        accept=".wav,audio/wav"
+        required
+    >
+
+    <button type="submit">
+        Submit Audio
+    </button>
+
+</form>
+
+<a class="link" href="/submissions">
+    View All Submissions
+</a>
+
+</body>
+</html>

@@ -35,9 +35,17 @@ def create_person_from_naukri(row):
 
     return {
         "name": normalize_value(row.get("Full Name")),
+        "name_clean": row.get("name_clean"),
+
         "email": row.get("email_clean"),
+        "email_clean": row.get("email_clean"),
+
         "phone": row.get("phone_clean"),
+        "phone_clean": row.get("phone_clean"),
+
         "city": row.get("city_clean"),
+        "city_clean": row.get("city_clean"),
+
         "experience_years": normalize_value(
             row.get("Experience (Years)")
         ),
@@ -62,9 +70,16 @@ def create_person_from_gig(row):
 
     return {
         "name": normalize_value(row.get("worker_name")),
+        "name_clean": row.get("name_clean"),
+
         "email": row.get("email_clean"),
+        "email_clean": row.get("email_clean"),
+
         "phone": None,
+        "phone_clean": None,
+
         "city": row.get("city_clean"),
+        "city_clean": row.get("city_clean"),
         "experience_years": None,
         "current_ctc": None,
         "applied_date": None,
@@ -83,9 +98,16 @@ def create_person_from_cbnexus(row):
 
     return {
         "name": normalize_value(row.get("Name")),
+        "name_clean": row.get("name_clean"),
+
         "email": None,
+        "email_clean": None,
+
         "phone": row.get("phone_clean"),
+        "phone_clean": row.get("phone_clean"),
+
         "city": row.get("city_clean"),
+        "city_clean": row.get("city_clean"),
         "experience_years": None,
         "current_ctc": None,
         "applied_date": None,
